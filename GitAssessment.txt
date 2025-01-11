@@ -1,0 +1,133 @@
+Establish a new directory, populate it with script files, initiate an empty repository on GitHub, convert the local directory into a Git repository, and link it to GitHub for pushing the code into the repository.Perform merge, rebase, stash commands in following github repo.
+
+1. EC2 Instance created
+2. connect with mobaxterm
+3.# Update the package manager
+sudo apt update -y      # For Ubuntu
+
+# Install Git
+sudo apt install git -y # For Ubuntu
+
+# Verify the installation
+git --version
+
+4. mkdir directory
+cd directoty
+nano git_project.sh
+#!/bin/bash
+myscript1
+
+nano git_project2.sh
+#!/bin/bash
+myscript2
+
+5. git init
+
+Before that install Apache2
+
+sudo apt update
+sudo apt install apache2
+sudo systemctl start apache2 
+sudo systemctl enable apache2
+systemctl status apache2 
+
+6. git status
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git_project.sh
+        git_project2.sh
+
+git add .
+git commit -m "Initial commited"
+
+7.Create a New Repository:
+Repository name: my_project
+Leave it empty (no README, no .gitignore, etc.).
+
+Git la tokenkey veachierupa adhu use pannu for next process username and pass: tokenkey
+
+or
+To avoid entering the token repeatedly, enable Git credential caching:
+
+
+8. git remote add origin https://github.com/Oviya253/my_git.git
+
+.git add pannierukom after that https
+
+9.git branch -M main
+git push -u origin main
+
+(The commands you provided are used in Git to rename the default branch to main and push it to a remote repository
+git branch -M main
+This command renames the current branch to main.
+The -M flag forces the rename, even if the branch main already exists
+git push -u origin main
+This command pushes the main branch to the remote repository named origin.)
+
+10. MERGE
+
+Create Branch
+
+git checkout -b feature-branch
+creates branch name feature-branch
+
+echo "New feature content" >> feature.txt
+
+or give git_project.sh also
+
+git add feature.txt
+git commit -m "Add feature.txt"
+
+using git status check
+git branch ----current branch
+
+$$$$$
+
+git checkout main
+git merge feature-branch
+
+$$$$
+
+11. stash
+
+create echo "temporary" >> newtext.txt
+git add newtext.txt
+
+git stash
+
+After stashing, you can apply the stashed changes:
+
+git stash apply
+
+git stash apply stash@{0}
+
+ls
+
+
+12. Rebase
+
+git checkout feature-branch
+echo "Rebase change" >> rebase.txt
+git add rebase.txt
+git commit -m "Add rebase.txt"
+
+git checkout main
+git rebase feature-branch
+
+
+Resolve Conflicts (if any): Use a text editor to resolve conflicts, then:
+
+git add .
+git rebase --continue
+
+13. git push --set-upstream origin feature-branch
+
+
+
+
+
+
+
